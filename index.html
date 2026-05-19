@@ -1,1 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Aamantrit — Wedding Photography Booking</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 32'><rect x='3' y='9' width='34' height='20' rx='3' fill='%232D6A4F'/><circle cx='20' cy='19' r='6' stroke='white' stroke-width='2' fill='none'/><circle cx='20' cy='19' r='2.5' fill='white'/></svg>">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:'DM Sans',-apple-system,sans-serif;background:#fff;color:#111;-webkit-font-smoothing:antialiased}input,select,button{font-family:inherit}input:focus,select:focus{border-color:#2D6A4F!important;outline:none;box-shadow:0 0 0 3px rgba(45,106,79,.08)}select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10'%3E%3Cpath fill='%232D6A4F' d='M5 7L1 3h8z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:32px!important}::-webkit-scrollbar{width:4px}::-webkit-scrollbar-thumb{background:#ddd;border-radius:2px}@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}.page{min-height:100vh;display:none}.page.active{display:block}
+.hdr{padding:14px 20px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #e5e5e5;position:sticky;top:0;background:#fff;z-index:10}
+.logo{display:flex;align-items:center;gap:8px}.logo span{font-size:16px;font-weight:700;color:#2D6A4F}
+.badge{font-size:11px;color:#555;background:#E8F5EF;padding:4px 12px;border-radius:20px;font-weight:500}
+.btn{padding:13px 28px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;border:none;transition:all .2s}
+.bp{background:#2D6A4F;color:#fff}.bp:hover{background:#245a41}.bp:disabled{opacity:.4;cursor:default}
+.bo{background:transparent;color:#2D6A4F;border:1px solid #2D6A4F}.bo:hover{background:#E8F5EF}
+.inp{width:100%;padding:12px 14px;border:1px solid #e5e5e5;border-radius:8px;font-size:14px;color:#111;background:#fff}
+.card{border:1px solid #e5e5e5;border-radius:12px;padding:24px;cursor:pointer;transition:all .2s}.card:hover{border-color:#2D6A4F;transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.06)}
+.bk{background:none;border:none;cursor:pointer;font-size:14px;color:#555;font-family:inherit}
+.g3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:8px 20px}
+.sect{margin-bottom:24px}.sect h3{font-size:15px;font-weight:600;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid #e5e5e5}
+.sub{border:1px solid #eee;border-radius:8px;padding:11px 14px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;transition:all .15s;margin-bottom:6px}.sub.on{border-color:#2D6A4F;background:#E8F5EF}.sub:hover{border-color:#B7DBCA}
+.ck{width:20px;height:20px;border-radius:4px;border:2px solid #ddd;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff;flex-shrink:0}.ck.on{background:#2D6A4F;border-color:#2D6A4F}
+.tb{font-size:13px;padding:8px 20px;border-radius:6px;cursor:pointer;border:1px solid #ddd;background:#fff;color:#111;font-weight:500;font-family:inherit;transition:all .15s}.tb.on{background:#2D6A4F;color:#fff;border-color:#2D6A4F}
+.qb{width:26px;height:26px;border-radius:5px;border:1px solid #ddd;background:#fff;cursor:pointer;font-size:15px;display:flex;align-items:center;justify-content:center}
+.mem{border:1px solid #e5e5e5;border-radius:10px;padding:12px;cursor:pointer;transition:all .15s;position:relative}.mem:hover{border-color:#B7DBCA}.mem.sel{border:2px solid #2D6A4F;background:#E8F5EF;padding:11px}
+.dt{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:4px}
+.sticky{position:sticky;bottom:0;background:#fff;border-top:1px solid #e5e5e5;padding:14px 20px;display:flex;justify-content:space-between;align-items:center}
+.pay{border:1px solid #e5e5e5;border-radius:10px;padding:14px 16px;cursor:pointer;transition:all .15s;display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}.pay.sel{border:2px solid #2D6A4F;background:#E8F5EF;padding:13px 15px}
+.row{display:flex;justify-content:space-between;padding:7px 0;font-size:13px;color:#555;border-bottom:1px solid #f5f5f5}
+@media(max-width:640px){.g3{grid-template-columns:1fr!important}.g2{grid-template-columns:1fr!important}.hm{display:none!important}}
+</style>
+</head>
+<body>
 
+<!-- HOME -->
+<div class="page active" id="p-home">
+<div class="hdr"><div class="logo"><svg width="28" height="22" viewBox="0 0 40 32"><rect x="3" y="9" width="34" height="20" rx="3" fill="#2D6A4F"/><rect x="15" y="5" width="10" height="5" rx="2" fill="#2D6A4F"/><circle cx="20" cy="19" r="6" stroke="#FFF" stroke-width="2" fill="none"/><circle cx="20" cy="19" r="2.5" fill="#FFF"/><circle cx="31" cy="13" r="1.5" fill="#FFF" opacity=".7"/></svg><span>Aamantrit</span></div><div class="badge">📍 Bangalore Only</div></div>
+<div style="padding:48px 20px;text-align:center;max-width:540px;margin:0 auto;animation:fadeUp .6s ease">
+<h1 style="font-size:clamp(22px,5vw,34px);font-weight:700;line-height:1.3;margin-bottom:12px">Capture Every Beautiful Moment</h1>
+<p style="font-size:15px;color:#555;line-height:1.6;max-width:420px;margin:0 auto">Professional wedding photography & videography in Bangalore. Choose your team, build your package, get instant pricing.</p></div>
+<div style="max-width:800px;margin:0 auto;padding:0 20px 48px"><div class="g3">
+<div class="card" onclick="go('work')"><div style="font-size:32px;margin-bottom:12px">🎬</div><div style="font-size:16px;font-weight:600;margin-bottom:6px">See Our Work</div><div style="font-size:13px;color:#555;line-height:1.5">Browse photos & videos from recent shoots</div><div style="margin-top:14px;font-size:13px;color:#2D6A4F;font-weight:600">Explore →</div></div>
+<div class="card" onclick="start('prewedding')"><div style="font-size:32px;margin-bottom:12px">🌅</div><div style="font-size:16px;font-weight:600;margin-bottom:6px">Pre Wedding</div><div style="font-size:13px;color:#555;line-height:1.5">Couple portraits, reels, drone shoots</div><div style="margin-top:14px;font-size:13px;color:#2D6A4F;font-weight:600">Book Now →</div></div>
+<div class="card" onclick="start('wedding')"><div style="font-size:32px;margin-bottom:12px">🪔</div><div style="font-size:16px;font-weight:600;margin-bottom:6px">Wedding</div><div style="font-size:13px;color:#555;line-height:1.5">Full wedding day coverage</div><div style="margin-top:14px;font-size:13px;color:#2D6A4F;font-weight:600">Book Now →</div></div>
+</div></div>
+<div style="background:#FAFAFA;padding:48px 20px"><div style="max-width:800px;margin:0 auto"><h2 style="font-size:20px;font-weight:700;text-align:center;margin-bottom:28px">Why Book With Us</h2><div class="g3" id="whyG"></div></div></div>
+<div style="padding:20px;text-align:center;font-size:12px;color:#999;border-top:1px solid #e5e5e5">© 2026 Aamantrit · Bangalore</div>
+</div>
+
+<!-- WORK -->
+<div class="page" id="p-work">
+<div class="hdr"><button class="bk" onclick="go('home')">← Our Work</button><div class="logo"><svg width="22" height="18" viewBox="0 0 40 32"><rect x="3" y="9" width="34" height="20" rx="3" fill="#2D6A4F"/><circle cx="20" cy="19" r="6" stroke="#FFF" stroke-width="2" fill="none"/><circle cx="20" cy="19" r="2.5" fill="#FFF"/></svg><span>Aamantrit</span></div></div>
+<div style="max-width:800px;margin:0 auto;padding:24px 20px 40px">
+<h3 style="font-size:18px;font-weight:600;margin-bottom:16px">📸 Photos</h3>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-bottom:36px" id="pG"></div>
+<h3 style="font-size:18px;font-weight:600;margin-bottom:16px">🎬 Videos</h3>
+<div id="vL" style="display:flex;flex-direction:column;gap:10px"></div></div></div>
+
+<!-- FORM -->
+<div class="page" id="p-form">
+<div class="hdr"><button class="bk" onclick="go('home')">← <span id="fT">Booking</span></button><div class="logo"><svg width="22" height="18" viewBox="0 0 40 32"><rect x="3" y="9" width="34" height="20" rx="3" fill="#2D6A4F"/><circle cx="20" cy="19" r="6" stroke="#FFF" stroke-width="2" fill="none"/><circle cx="20" cy="19" r="2.5" fill="#FFF"/></svg><span>Aamantrit</span></div></div>
+<div style="max-width:460px;margin:0 auto;padding:32px 20px;animation:fadeUp .4s ease">
+<h2 style="font-size:22px;font-weight:700;margin-bottom:4px">Tell us about yourself</h2>
+<p style="font-size:13px;color:#555;margin-bottom:28px">We'll personalise your experience.</p>
+<div style="display:flex;flex-direction:column;gap:18px">
+<div><label style="font-size:12px;font-weight:500;color:#555;display:block;margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px">Full Name *</label><input class="inp" id="fN" placeholder="Enter your full name"></div>
+<div><label style="font-size:12px;font-weight:500;color:#555;display:block;margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px">Phone Number *</label><div style="display:flex;gap:8px"><div style="padding:12px;border:1px solid #e5e5e5;border-radius:8px;background:#FAFAFA;width:54px;text-align:center;font-size:14px">+91</div><input class="inp" id="fP" placeholder="98765 43210" type="tel"></div></div>
+<div><label style="font-size:12px;font-weight:500;color:#555;display:block;margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px">Email ID</label><input class="inp" id="fE" placeholder="you@example.com" type="email"></div>
+<div class="g2"><div><label style="font-size:12px;font-weight:500;color:#555;display:block;margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px">Start Date *</label><input class="inp" id="fD1" type="date"></div><div><label style="font-size:12px;font-weight:500;color:#555;display:block;margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px">End Date</label><input class="inp" id="fD2" type="date"></div></div>
+<div><label style="font-size:12px;font-weight:500;color:#555;display:block;margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px">Budget Range *</label><select class="inp" id="fB"><option value="">Select your budget</option></select></div>
+</div>
+<button class="btn bp" style="width:100%;margin-top:28px" id="bS" onclick="goSvc()" disabled>Continue to Services →</button>
+<p style="font-size:11px;color:#999;text-align:center;margin-top:10px">* Required fields</p></div></div>
+
+<!-- SERVICES -->
+<div class="page" id="p-svc">
+<div class="hdr"><button class="bk" onclick="go('form')">← Services</button><div class="logo"><svg width="22" height="18" viewBox="0 0 40 32"><rect x="3" y="9" width="34" height="20" rx="3" fill="#2D6A4F"/><circle cx="20" cy="19" r="6" stroke="#FFF" stroke-width="2" fill="none"/><circle cx="20" cy="19" r="2.5" fill="#FFF"/></svg><span>Aamantrit</span></div></div>
+<div style="max-width:880px;margin:0 auto;padding:24px 20px 100px;display:flex;gap:32px;flex-wrap:wrap;align-items:flex-start">
+<div style="flex:1;min-width:280px" id="sA"></div>
+<div style="width:260px;flex-shrink:0;position:sticky;top:70px" class="hm"><div id="sp" style="border:1px solid #e5e5e5;border-radius:10px;padding:20px"><div style="font-size:14px;font-weight:600;margin-bottom:8px">Price Summary</div><div style="font-size:13px;color:#999" id="sc">Select services to see your quote.</div></div></div>
+</div>
+<div class="sticky"><div id="mp"><div style="font-size:13px;color:#555">Select services</div></div><button class="btn bp" id="bSm" onclick="goSum()" disabled>Review & Book →</button></div>
+</div>
+
+<!-- SUMMARY -->
+<div class="page" id="p-sum">
+<div class="hdr"><button class="bk" onclick="go('svc')">← Review</button><div class="logo"><svg width="22" height="18" viewBox="0 0 40 32"><rect x="3" y="9" width="34" height="20" rx="3" fill="#2D6A4F"/><circle cx="20" cy="19" r="6" stroke="#FFF" stroke-width="2" fill="none"/><circle cx="20" cy="19" r="2.5" fill="#FFF"/></svg><span>Aamantrit</span></div></div>
+<div style="max-width:540px;margin:0 auto;padding:24px 20px 40px;animation:fadeUp .4s ease" id="smC"></div>
+</div>
+
+<!-- CONFIRM -->
+<div class="page" id="p-conf">
+<div class="hdr" style="justify-content:flex-end"><div class="logo"><svg width="22" height="18" viewBox="0 0 40 32"><rect x="3" y="9" width="34" height="20" rx="3" fill="#2D6A4F"/><circle cx="20" cy="19" r="6" stroke="#FFF" stroke-width="2" fill="none"/><circle cx="20" cy="19" r="2.5" fill="#FFF"/></svg><span>Aamantrit</span></div></div>
+<div style="max-width:460px;margin:0 auto;padding:48px 20px;text-align:center;animation:fadeUp .5s ease" id="cfC"></div>
+</div>
+
+<script>
+const SHEET_WEBHOOK='https://script.google.com/macros/s/AKfycbzZbgc0TBIFt7RuOAYiuZUKipEsApLlD4qjxP-kZ66vqcFFR4oH51zfk2XYsNwfflVX/exec'; // Paste Google Apps Script URL here
+
+let cat=null,sel={},qtys={},secOpen={P:true,V:false},secTier={P:'premier',V:'classic'},selMem=null,payM=null,bkId=null;
+const $=id=>document.getElementById(id);
+const fmt=n=>n.toLocaleString('en-IN');
+
+// ~15% gap: Premier is higher, Classic ≈ Premier × 0.85
+const P_SVC=[
+  {id:'still',label:'Still Photography',pp:15000,cp:12500},
+  {id:'drone_p',label:'Drone Shots',pp:10000,cp:8500},
+  {id:'p_reel',label:'Portrait Reels',pp:4000,cp:3500,qty:1,u:'reel'},
+  {id:'l_reel',label:'Landscape Reels',pp:6000,cp:5000,qty:1,u:'reel'},
+  {id:'album_p',label:'Photo Album',pp:12000,cp:10000},
+  {id:'mua',label:'Makeup Artist',pp:10000,cp:8500},
+];
+const V_SVC=[
+  {id:'videog',label:'Videography',pp:20000,cp:17000},
+  {id:'cine',label:'Cinematic Film',pp:35000,cp:30000},
+  {id:'drone_v',label:'Drone Videography',pp:10000,cp:8500},
+  {id:'v_reel',label:'Reels',pp:6000,cp:5000,qty:1,u:'reel'},
+  {id:'sde',label:'Same Day Edit',pp:30000,cp:25000},
+  {id:'led',label:'LED / Live Streaming',pp:25000,cp:21000},
+];
+
+const PW_B=['₹25,000 – ₹50,000','₹50,000 – ₹75,000','₹75,000 – ₹1,00,000','₹1,00,000 – ₹1,50,000','₹1,50,000 – ₹2,50,000'];
+const W_B=['₹75,000 – ₹1,50,000','₹1,50,000 – ₹2,50,000','₹2,50,000 – ₹4,00,000','₹4,00,000 – ₹6,00,000','₹6,00,000 – ₹10,00,000'];
+
+const PREMIER=[
+  {id:'p1',n:'Arjun Mehta',r:'Photographer',rt:4.9,pj:120,s:'Candid & Editorial'},
+  {id:'p2',n:'Priya Sharma',r:'Photographer',rt:4.8,pj:95,s:'Portraits & Lifestyle'},
+  {id:'p3',n:'Karthik Rao',r:'Videographer',rt:4.9,pj:85,s:'Cinematic & Aerial'},
+  {id:'p4',n:'Deepika Nair',r:'Videographer',rt:4.8,pj:70,s:'Documentary Style'},
+  {id:'p5',n:'Siddharth J.',r:'Photo & Video',rt:4.7,pj:110,s:'Wedding Specialist'},
+  {id:'p6',n:'Ananya Reddy',r:'Photographer',rt:4.8,pj:65,s:'Natural Light Expert'},
+];
+const CLASSIC=[
+  {id:'c1',n:'Rahul Kumar',r:'Photographer',rt:4.5,pj:45,s:'Traditional & Candid'},
+  {id:'c2',n:'Sneha Iyer',r:'Photographer',rt:4.4,pj:38,s:'Outdoor Portraits'},
+  {id:'c3',n:'Anil Patel',r:'Videographer',rt:4.5,pj:50,s:'Highlights & Reels'},
+  {id:'c4',n:'Meera Das',r:'Videographer',rt:4.3,pj:30,s:'Short Films'},
+  {id:'c5',n:'Vikram Singh',r:'Photo & Video',rt:4.4,pj:42,s:'Event Coverage'},
+  {id:'c6',n:'Kavya Menon',r:'Photographer',rt:4.5,pj:35,s:'Creative Portraits'},
+];
+
+const WHY=[{i:'💰',t:'Best Pricing in Bangalore',d:'Competitive rates, no hidden charges'},{i:'📅',t:'5+ Years of Experience',d:'Trusted by hundreds of families'},{i:'🎥',t:'Advanced Equipment',d:'Latest cameras, drones & gimbals'},{i:'👥',t:'Served 300+ Clients',d:'Growing family of happy couples'},{i:'📞',t:'Dedicated Support',d:'Personal coordinator throughout'},{i:'✨',t:'Fresh Creative Perspective',d:'Modern storytelling, your vibe'}];
+
+function avail(mid){let h=0;const d=$('fD1')?.value||'';for(let c of mid+d)h=((h<<5)-h)+c.charCodeAt(0);return(h%5)!==0}
+
+function init(){
+  $('whyG').innerHTML=WHY.map(w=>`<div style="display:flex;gap:12px;padding:14px;background:#fff;border-radius:10px;border:1px solid #e5e5e5"><div style="font-size:20px;flex-shrink:0;margin-top:2px">${w.i}</div><div><div style="font-size:13px;font-weight:600;margin-bottom:2px">${w.t}</div><div style="font-size:12px;color:#555;line-height:1.4">${w.d}</div></div></div>`).join('');
+  $('pG').innerHTML=[{t:'Lakeside Pre-Wedding',c:'#E8F5EF'},{t:'Palace Garden',c:'#F0E8F5'},{t:'Urban Portraits',c:'#F5F0E8'},{t:'Traditional Wedding',c:'#E8EFF5'},{t:'Sangeet Night',c:'#F5E8E8'},{t:'Reception',c:'#E8F5F0'}].map(p=>`<div style="background:${p.c};border-radius:10px;aspect-ratio:4/5;display:flex;align-items:flex-end;padding:12px;position:relative;overflow:hidden"><div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.35),transparent 50%)"></div><span style="position:relative;color:#fff;font-size:12px;font-weight:500">${p.t}</span></div>`).join('');
+  $('vL').innerHTML=[{t:'Cinematic Film — Ananya & Rohan',d:'4:32'},{t:'Pre-Wedding Reel — Meera & Aditya',d:'1:15'},{t:'Same Day Edit — Priya & Vikram',d:'6:10'},{t:'Highlights — Kavya & Arjun',d:'3:45'}].map(v=>`<div style="display:flex;align-items:center;gap:14px;padding:14px;border:1px solid #e5e5e5;border-radius:10px"><div style="width:42px;height:42px;border-radius:8px;background:#E8F5EF;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0">▶</div><div><div style="font-size:14px;font-weight:500">${v.t}</div><div style="font-size:12px;color:#999">${v.d}</div></div></div>`).join('');
+  ['fN','fP','fD1','fD2','fB'].forEach(id=>$(id).addEventListener('input',vf));
+  ['fD1','fD2','fB'].forEach(id=>$(id).addEventListener('change',vf));
+}
+
+function go(id){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));$('p-'+id).classList.add('active');window.scrollTo({top:0,behavior:'smooth'})}
+function start(c){cat=c;sel={};qtys={};secOpen={P:true,V:false};secTier={P:'premier',V:'classic'};selMem=null;payM=null;$('fT').textContent=c==='prewedding'?'Pre Wedding':'Wedding';$('fB').innerHTML='<option value="">Select your budget</option>'+(c==='prewedding'?PW_B:W_B).map(b=>`<option value="${b}">${b}</option>`).join('');go('form')}
+function vf(){$('bS').disabled=!($('fN').value.trim()&&$('fP').value.trim()&&$('fD1').value&&$('fB').value)}
+
+// ─── SERVICES ───
+function goSvc(){render();go('svc')}
+
+function render(){
+  $('sA').innerHTML=`<h2 style="font-size:20px;font-weight:700;margin-bottom:4px">What do you need?</h2>
+    <p style="font-size:13px;color:#555;margin-bottom:20px">Expand Photography or Videography, pick your tier, then select items.</p>
+    ${rSec('P','📸 Photography',P_SVC)}
+    ${rSec('V','🎬 Videography',V_SVC)}
+    <div id="tA"></div>`;
+  rTeam();updPr();
+}
+
+function rSec(key,title,svcs){
+  const open=secOpen[key], tier=secTier[key];
+  const count=svcs.filter(s=>sel[s.id]).length;
+  return `<div style="border:1px solid ${open?'#2D6A4F':'#e5e5e5'};border-radius:12px;margin-bottom:14px;overflow:hidden">
+    <div onclick="tSec('${key}')" style="padding:16px 18px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;background:${open?'#E8F5EF':'#fff'}">
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="font-size:16px;font-weight:600;color:${open?'#2D6A4F':'#111'}">${title}</span>
+        ${count?`<span style="background:#2D6A4F;color:#fff;font-size:10px;font-weight:700;padding:2px 7px;border-radius:10px">${count}</span>`:''}
+      </div>
+      <span style="font-size:16px;color:#999;transform:rotate(${open?180:0}deg);transition:transform .2s">▼</span>
+    </div>
+    ${open?`<div style="padding:12px 16px 16px">
+      <!-- TIER TOGGLE -->
+      <div style="display:flex;gap:8px;margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid #eee">
+        <button class="tb ${tier==='premier'?'on':''}" onclick="event.stopPropagation();sTier('${key}','premier')">⭐ Premier</button>
+        <button class="tb ${tier==='classic'?'on':''}" onclick="event.stopPropagation();sTier('${key}','classic')">Classic</button>
+        <span style="font-size:11px;color:#999;align-self:center;margin-left:4px">${tier==='premier'?'Top-tier professionals':'Skilled professionals, great value'}</span>
+      </div>
+      <!-- SUB SERVICES -->
+      ${svcs.map(s=>{
+        const on=!!sel[s.id], price=tier==='premier'?s.pp:s.cp, q=qtys[s.id]||1;
+        return `<div class="sub ${on?'on':''}" onclick="tSvc('${s.id}')">
+          <div style="flex:1;display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+            <span style="font-size:13px;font-weight:500;min-width:140px">${s.label}</span>
+            <span style="font-size:12px;color:#777">₹${fmt(price)}${s.qty!==undefined?'/each':''}</span>
+            ${on&&s.qty!==undefined?`<div style="display:flex;align-items:center;gap:6px;margin-left:auto" onclick="event.stopPropagation()">
+              <button class="qb" onclick="sQ('${s.id}',-1)">−</button>
+              <span style="font-size:13px;font-weight:600;min-width:18px;text-align:center">${q}</span>
+              <button class="qb" onclick="sQ('${s.id}',1)">+</button>
+              <span style="font-size:11px;color:#555">${s.u}${q>1?'s':''}</span>
+            </div>`:''}
+          </div>
+          <div class="ck ${on?'on':''}">${on?'✓':''}</div>
+        </div>`;
+      }).join('')}
+    </div>`:''}
+  </div>`;
+}
+
+function tSec(k){secOpen[k]=!secOpen[k];render()}
+function sTier(k,t){secTier[k]=t;render()}
+function tSvc(id){sel[id]=!sel[id];if(!sel[id])delete sel[id];if(sel[id]&&!qtys[id]){const s=[...P_SVC,...V_SVC].find(x=>x.id===id);if(s?.qty!==undefined)qtys[id]=1;}render()}
+function sQ(id,d){qtys[id]=Math.max(1,(qtys[id]||1)+d);render()}
+
+function rTeam(){
+  if(!Object.keys(sel).length){$('tA').innerHTML='';return}
+  const hasPremier=P_SVC.some(s=>sel[s.id]&&secTier.P==='premier')||V_SVC.some(s=>sel[s.id]&&secTier.V==='premier');
+  const hasClassic=P_SVC.some(s=>sel[s.id]&&secTier.P==='classic')||V_SVC.some(s=>sel[s.id]&&secTier.V==='classic');
+  $('tA').innerHTML=`<h3 style="font-size:16px;font-weight:600;margin:20px 0 6px">Choose Your Team Member</h3>
+    <p style="font-size:12px;color:#555;margin-bottom:14px">Tap to select. Green = available on your dates.</p>
+    ${hasPremier?tGrid('Premier',PREMIER):''}
+    ${hasClassic?tGrid('Classic',CLASSIC):''}
+    ${!hasPremier&&!hasClassic?tGrid('Premier',PREMIER)+tGrid('Classic',CLASSIC):''}`;
+}
+
+function tGrid(label,members){
+  return `<div style="margin-bottom:18px"><div style="font-size:12px;font-weight:600;color:#2D6A4F;text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px">${label} Team</div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:8px">
+  ${members.map(m=>{const av=avail(m.id),sl=selMem===m.id;return `<div class="mem ${sl?'sel':''}" onclick="${av?`pM('${m.id}')`:''}">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+      <div style="width:34px;height:34px;border-radius:50%;background:${label==='Premier'?'#E8F5EF':'#F5F5F5'};display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;color:${label==='Premier'?'#2D6A4F':'#555'}">${m.n.charAt(0)}</div>
+      <div><div style="font-size:12px;font-weight:600">${m.n}</div><div style="font-size:10px;color:#777">${m.r}</div></div>
+    </div>
+    <div style="font-size:10px;color:#555;margin-bottom:4px">${m.s}</div>
+    <div style="display:flex;justify-content:space-between;font-size:10px">
+      <span style="color:#999">⭐${m.rt} · ${m.pj} projects</span>
+      <span><span class="dt" style="background:${av?'#22C55E':'#EF4444'}"></span>${av?'Free':'Booked'}</span>
+    </div>
+    ${sl?'<div style="position:absolute;top:5px;right:7px;color:#2D6A4F;font-weight:700;font-size:13px">✓</div>':''}
+    ${!av?'<div style="position:absolute;inset:0;background:rgba(255,255,255,.6);border-radius:10px;cursor:not-allowed"></div>':''}
+  </div>`}).join('')}</div></div>`;
+}
+
+function pM(id){selMem=id;render()}
+
+function calc(){
+  let tot=0;const items=[];
+  const allS=[...P_SVC,...V_SVC];
+  Object.keys(sel).forEach(sid=>{if(!sel[sid])return;const s=allS.find(x=>x.id===sid);if(!s)return;
+    const inP=P_SVC.includes(s), tier=inP?secTier.P:secTier.V;
+    const q=qtys[sid]||1, price=(tier==='premier'?s.pp:s.cp)*q;
+    tot+=price;items.push({label:s.label,tier,qty:q,price});
+  });
+  const gst=Math.round(tot*.18);
+  return{sub:tot,gst,total:tot+gst,items};
+}
+
+function updPr(){
+  const pr=calc();$('bSm').disabled=!Object.keys(sel).length;
+  if(!pr.total){$('mp').innerHTML='<div style="font-size:13px;color:#555">Select services</div>';$('sc').innerHTML='Select services to see your quote.';return}
+  $('mp').innerHTML=`<div style="font-size:18px;font-weight:700;color:#2D6A4F">₹${fmt(pr.total)}</div><div style="font-size:11px;color:#999">incl. GST</div>`;
+  $('sc').innerHTML=pr.items.map(i=>`<div style="display:flex;justify-content:space-between;font-size:12px;color:#666;margin-bottom:5px"><span>${i.label} <span style="color:#aaa">${i.tier}</span>${i.qty>1?' ×'+i.qty:''}</span><span>₹${fmt(i.price)}</span></div>`).join('')+`<div style="border-top:1px solid #eee;margin-top:8px;padding-top:8px"><div style="display:flex;justify-content:space-between;font-size:11px;color:#999;margin-bottom:3px"><span>GST</span><span>₹${fmt(pr.gst)}</span></div><div style="display:flex;justify-content:space-between;font-size:18px;font-weight:700;color:#2D6A4F"><span>Total</span><span>₹${fmt(pr.total)}</span></div></div>`;
+}
+
+// ─── SUMMARY ───
+function goSum(){
+  payM=null;const pr=calc();
+  const nm=$('fN').value,ph=$('fP').value,d1=$('fD1').value,d2=$('fD2').value,bg=$('fB').value;
+  const d1s=new Date(d1).toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'});
+  const d2s=d2?new Date(d2).toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'}):'Same day';
+  const allM=[...PREMIER,...CLASSIC],mn=selMem?allM.find(m=>m.id===selMem)?.n:'Not selected';
+  const av=avail(selMem||'x');
+
+  $('smC').innerHTML=`
+  <div class="sect"><h3>Your Details</h3><div class="g2" style="font-size:13px;gap:10px">
+    <div><span style="color:#999">Name</span><div style="font-weight:500;margin-top:2px">${nm}</div></div>
+    <div><span style="color:#999">Phone</span><div style="font-weight:500;margin-top:2px">+91 ${ph}</div></div>
+    <div><span style="color:#999">Dates</span><div style="font-weight:500;margin-top:2px">${d1s}${d2?' → '+d2s:''}</div></div>
+    <div><span style="color:#999">Team</span><div style="font-weight:500;margin-top:2px">${mn}</div></div>
+  </div></div>
+  <div class="sect"><h3>Availability</h3><div class="avail" style="background:${av?'#E8F5EF':'#FFF5F5'};border:1px solid ${av?'#B7DBCA':'#FFCCCC'}"><span style="font-size:20px">${av?'✅':'⚠️'}</span><div><div style="font-size:13px;font-weight:600;color:${av?'#2D6A4F':'#C53030'}">${av?'Slot Available':'Limited Availability'}</div><div style="font-size:12px;color:#555">${av?'Your dates are open.':'High demand. Book now.'}</div></div></div></div>
+  <div class="sect"><h3>Pricing</h3>
+    ${pr.items.map(i=>`<div class="row"><span>${i.label} (${i.tier})${i.qty>1?' × '+i.qty:''}</span><span style="font-weight:500;color:#111">₹${fmt(i.price)}</span></div>`).join('')}
+    <div style="border-top:1px solid #e5e5e5;margin-top:8px;padding-top:8px">
+      <div class="row"><span>Subtotal</span><span>₹${fmt(pr.sub)}</span></div>
+      <div class="row"><span>GST (18%)</span><span>₹${fmt(pr.gst)}</span></div>
+      <div style="display:flex;justify-content:space-between;font-size:20px;font-weight:700;color:#2D6A4F;margin-top:8px"><span>Total</span><span>₹${fmt(pr.total)}</span></div>
+    </div></div>
+  <div class="sect"><h3>Payment</h3>
+    <div class="pay" id="pF" onclick="sP('full')"><div><div style="font-size:14px;font-weight:500">Pay Full Amount</div><div style="font-size:12px;color:#555;margin-top:2px">Complete payment</div></div><div style="font-size:15px;font-weight:600;color:#2D6A4F">₹${fmt(pr.total)}</div></div>
+    <div class="pay" id="pH" onclick="sP('half')"><div><div style="font-size:14px;font-weight:500">Pay 50% Advance</div><div style="font-size:12px;color:#555;margin-top:2px">Balance ₹${fmt(Math.round(pr.total/2))} before event</div></div><div style="font-size:15px;font-weight:600;color:#2D6A4F">₹${fmt(Math.round(pr.total/2))}</div></div>
+    <div class="pay" id="pC" onclick="sP('cash')"><div><div style="font-size:14px;font-weight:500">Cash at Venue</div><div style="font-size:12px;color:#555;margin-top:2px">Pay on event day</div></div><div style="font-size:13px;font-weight:600;color:#2D6A4F">💵 Cash</div></div>
+  </div>
+  <button class="btn bp" style="width:100%;padding:16px;font-size:15px;margin-bottom:32px" id="bC" onclick="cfm()" disabled>Confirm Booking →</button>`;
+  go('sum');
+}
+
+function sP(m){payM=m;['F','H','C'].forEach(k=>$('p'+k).classList.remove('sel'));$('p'+(m==='full'?'F':m==='half'?'H':'C')).classList.add('sel');$('bC').disabled=false;$('bC').textContent=m==='cash'?'Confirm Booking →':'Proceed to Pay →'}
+
+function cfm(){
+  bkId='AAM-'+Date.now().toString(36).toUpperCase();
+  const pr=calc(),nm=$('fN').value,ph=$('fP').value,em=$('fE').value,d1=$('fD1').value,d2=$('fD2').value,bg=$('fB').value;
+  const d1s=new Date(d1).toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'});
+  const half=Math.round(pr.total/2),allM=[...PREMIER,...CLASSIC],mn=selMem?allM.find(m=>m.id===selMem)?.n:'Not selected';
+  const payL=payM==='full'?'Full Payment':payM==='half'?'50% Advance':'Cash at Venue';
+  const ap=payM==='full'?pr.total:payM==='half'?half:0;
+  const svcL=pr.items.map(i=>`${i.label} (${i.tier})${i.qty>1?' x'+i.qty:''}`).join(', ');
+
+  const sd = {
+  category: cat,
+  bookingId: bkId,
+  name: nm,
+  phone: ph,
+  email: em,
+  startDate: d1,
+  endDate: d2 || d1,
+  budget: bg,
+  photoTier: secTier.P,
+  videoTier: secTier.V,
+  services: svcL,
+  teamMember: mn,
+  subtotal: pr.sub,
+  gst: pr.gst,
+  total: pr.total,
+  paymentType: payL,
+  amountPaid: ap
+};
+if(SHEET_WEBHOOK){
+  fetch(SHEET_WEBHOOK, {
+    method: 'POST',
+    headers: {'Content-Type': 'text/plain'},
+    body: JSON.stringify(sd)
+  })
+  .then(r => r.json())
+  .then(r => console.log('Sheet:', r))
+  .catch(e => console.error('Error:', e));
+}
+
+  $('cfC').innerHTML=`<div style="width:64px;height:64px;border-radius:50%;background:#E8F5EF;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:28px">✓</div>
+    <h2 style="font-size:24px;font-weight:700;margin-bottom:6px">Booking Confirmed!</h2>
+    <p style="font-size:14px;color:#555;margin-bottom:24px">We'll contact you shortly.</p>
+    <div style="background:#FAFAFA;border-radius:10px;padding:20px;text-align:left;margin-bottom:24px">
+      <div style="font-size:12px;color:#999;margin-bottom:6px;text-transform:uppercase;letter-spacing:1px">Booking Reference</div>
+      <div style="font-size:18px;font-weight:700;color:#2D6A4F;margin-bottom:14px">${bkId}</div>
+      <div class="g2" style="font-size:13px;gap:10px">
+        <div><span style="color:#999">Name</span><div style="font-weight:500;margin-top:2px">${nm}</div></div>
+        <div><span style="color:#999">Type</span><div style="font-weight:500;margin-top:2px">${cat==='prewedding'?'Pre Wedding':'Wedding'}</div></div>
+        <div><span style="color:#999">Dates</span><div style="font-weight:500;margin-top:2px">${d1s}${d2?' → '+new Date(d2).toLocaleDateString('en-IN',{day:'numeric',month:'short'}):''}  </div></div>
+        <div><span style="color:#999">Team</span><div style="font-weight:500;margin-top:2px">${mn}</div></div>
+        <div><span style="color:#999">Total</span><div style="font-weight:500;margin-top:2px">₹${fmt(pr.total)}</div></div>
+        <div><span style="color:#999">Payment</span><div style="font-weight:500;margin-top:2px">${payL}</div></div>
+        ${payM==='half'?`<div><span style="color:#999">Balance</span><div style="font-weight:500;margin-top:2px;color:#C53030">₹${fmt(half)}</div></div>`:''}
+      </div>
+    </div>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <button class="btn bp" onclick="wa()">📱 WhatsApp Us</button>
+      <button class="btn bo" onclick="rst()">New Booking</button>
+    </div>`;
+  go('conf');
+}
+
+function wa(){const pr=calc(),nm=$('fN').value;window.open('https://wa.me/919876543210?text='+encodeURIComponent('Hi! Booking with Aamantrit.\n\nID: '+bkId+'\nName: '+nm+'\nType: '+(cat==='prewedding'?'Pre Wedding':'Wedding')+'\nDates: '+$('fD1').value+($('fD2').value?' to '+$('fD2').value:'')+'\nTotal: ₹'+fmt(pr.total)+'\n\nPlease confirm.'),'_blank')}
+
+function rst(){cat=null;sel={};qtys={};secOpen={P:true,V:false};secTier={P:'premier',V:'classic'};selMem=null;payM=null;bkId=null;$('fN').value='';$('fP').value='';$('fE').value='';$('fD1').value='';$('fD2').value='';$('fB').value='';go('home')}
+
+init();
+</script>
+</body>
+</html>
